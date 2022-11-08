@@ -49,7 +49,8 @@ public class AuthorImpl implements Author {
     @RequestAttribute(name = "rAttribute")
     private String reqAttribute;
 
-    @ResourcePath(path="/content/aemgeeks/us/en/home")@Via("resource")
+    @ResourcePath(path="/content/aemgeeks/us/en/home")
+    @Via("resource")
     Resource resourcePage;
 
     @ScriptVariable
@@ -62,6 +63,7 @@ public class AuthorImpl implements Author {
 
     @Inject
     @Via("resource")
+    // @ValueMapValue
     @Default(values = "AEM")
     private String fname;
 
@@ -130,7 +132,7 @@ public class AuthorImpl implements Author {
     public List<Map<String, String>> getBookDetailsWithMap() {
         List<Map<String, String>> bookDetailsMap = new ArrayList<>();
         try {
-            Resource bookDetail=resource.getChild("bookdetailswithmap");
+            Resource bookDetail = resource.getChild("bookdetailswithmap");
             if(bookDetail!=null){
                 for (Resource book : bookDetail.getChildren()) {
                     Map<String,String> bookMap = new HashMap<>();
