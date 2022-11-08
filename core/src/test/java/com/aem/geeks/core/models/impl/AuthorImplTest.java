@@ -75,9 +75,9 @@ class AuthorImplTest {
 
     @Test
     void getRequestAttribute() {
-        aemContext.request().setAttribute("rAttribute","TestAttribute");
+        aemContext.request().setAttribute("rAttribute1","TestAttributeOne");
         author=aemContext.request().adaptTo(Author.class);
-        assertEquals("TestAttribute",author.getRequestAttribute());
+        assertEquals("TestAttributeOne",author.getReqAttribute1());
     }
 
     @Test

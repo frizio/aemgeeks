@@ -8,7 +8,7 @@ public interface Author {
     String getLastName();
     boolean getIsProfessor();
     String getPageTitle();
-    String getRequestAttribute();
+    String getReqAttribute1();
     String getHomePageName();
     String getLastModifiedBy();
     List<String> getBooks();

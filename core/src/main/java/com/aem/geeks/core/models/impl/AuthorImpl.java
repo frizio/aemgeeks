@@ -46,8 +46,8 @@ public class AuthorImpl implements Author {
     @Self
     SlingHttpServletRequest slingHttpServletRequest;
 
-    @RequestAttribute(name = "rAttribute")
-    private String reqAttribute;
+    @RequestAttribute(name = "rAttribute1")
+    private String reqAttribute1;
 
     @ResourcePath(path="/content/aemgeeks/us/en/home")
     @Via("resource")
@@ -109,8 +109,8 @@ public class AuthorImpl implements Author {
 
     @Override
     @JsonIgnore
-    public String getRequestAttribute() {
-        return reqAttribute;
+    public String getReqAttribute1() {
+        return reqAttribute1;
     }
 
     @Override
