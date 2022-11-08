@@ -9,3 +9,4 @@
         jcr:primaryType="cq:PageContent"
         sling:resourceType="aemgeeks/components/structure/home"/>
 </jcr:root>
+
