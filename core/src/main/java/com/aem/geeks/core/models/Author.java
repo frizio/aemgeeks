@@ -13,4 +13,5 @@ public interface Author {
     String getLastModifiedBy();
     List<String> getBooks();
     List<Map<String, String>> getBookDetailsWithMap();
+
 }
