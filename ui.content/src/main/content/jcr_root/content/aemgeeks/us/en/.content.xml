@@ -5,6 +5,8 @@
     <jcr:content
         cq:contextHubPath="/etc/cloudsettings/default/contexthub"
         cq:contextHubSegmentsPath="/etc/segmentation/contexthub"
+        cq:lastModified="{Date}2022-11-10T17:36:49.696+01:00"
+        cq:lastModifiedBy="admin"
         cq:template="/conf/aemgeeks/settings/wcm/templates/page-content"
         jcr:primaryType="cq:PageContent"
         jcr:title="en"
@@ -76,6 +78,23 @@
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="aemgeeks/components/helloworld"
                         text="lalala :)"/>
+                    <author
+                        jcr:created="{Date}2022-11-08T18:15:17.445+01:00"
+                        jcr:createdBy="admin"
+                        jcr:lastModified="{Date}2022-11-08T18:51:07.554+01:00"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="aemgeeks/components/content/author"
+                        books="[Book1,Book2,Book3,]"
+                        fname="AEM FIRSTNAME"
+                        professor="false"/>
+                    <author_books
+                        jcr:created="{Date}2022-11-10T17:36:49.483+01:00"
+                        jcr:createdBy="admin"
+                        jcr:lastModified="{Date}2022-11-10T17:36:49.483+01:00"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="aemgeeks/components/content/author-books"/>
                 </container>
             </container>
         </root>
