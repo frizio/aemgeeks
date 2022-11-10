@@ -72,18 +72,17 @@ public class AuthorBooksImpl implements AuthorBooks {
 
     @Override
     public List<MultifieldHelper> getBookDetailsWithBean(){
-        List<MultifieldHelper> bookDetailsBean=new ArrayList<>();
+        List<MultifieldHelper> bookDetailsBean = new ArrayList<>();
         try {
-            Resource bookDetailBean=componentResource.getChild("bookdetailswithbean");
-            if(bookDetailBean!=null){
+            Resource bookDetailBean = componentResource.getChild("bookdetailswithbean");
+            if (bookDetailBean != null) {
                 for (Resource bookBean : bookDetailBean.getChildren()) {
                     LOG.info("\n PATH Bean {} ",bookBean.getPath());
                     LOG.info("\n BEAN PRO {} ",bookBean.getValueMap().get("bookname",String.class));
-
                     bookDetailsBean.add(new MultifieldHelper(bookBean));
                 }
             }
-        }catch (Exception e){
+        } catch (Exception e) {
             LOG.info("\n ERROR while getting Book Details With Bean {} ",e.getMessage());
         }
         return bookDetailsBean;

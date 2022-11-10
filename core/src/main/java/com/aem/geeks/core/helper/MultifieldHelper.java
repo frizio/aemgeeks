@@ -9,6 +9,9 @@ import org.slf4j.LoggerFactory;
 import java.util.Date;
 import java.util.List;
 
+/*
+  Book Bean
+ */
 public class MultifieldHelper {
     private static final Logger LOG = LoggerFactory.getLogger(MultifieldHelper.class);
     private String bookName;

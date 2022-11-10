@@ -13,6 +13,7 @@
                 sling:resourceType="granite/ui/components/coral/foundation/tabs"
                 maximized="{Boolean}true">
                 <items jcr:primaryType="nt:unstructured">
+
                     <multifieldwithmap
                         jcr:primaryType="nt:unstructured"
                         jcr:title="Multifield With Map"
@@ -78,6 +79,7 @@
                             </well>
                         </items>
                     </multifieldwithmap>
+
                     <multifieldwithbean
                         jcr:primaryType="nt:unstructured"
                         jcr:title="Multifield With Bean"
@@ -128,6 +130,7 @@
                             </well>
                         </items>
                     </multifieldwithbean>
+
                     <nastedmultifield
                         jcr:primaryType="nt:unstructured"
                         jcr:title="Nasted Multifield"
@@ -200,6 +203,7 @@
                             </well>
                         </items>
                     </nastedmultifield>
+
                 </items>
             </tabs>
         </items>
