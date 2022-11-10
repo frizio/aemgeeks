@@ -4,6 +4,10 @@ import org.apache.sling.api.resource.Resource;
 
 import java.util.Date;
 
+/*
+* Book nested Bean
+* */
+
 public class NastedHalper {
     private int bookEditon;
     private Date editonDate;

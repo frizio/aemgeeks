@@ -5,7 +5,7 @@
     <jcr:content
         cq:contextHubPath="/etc/cloudsettings/default/contexthub"
         cq:contextHubSegmentsPath="/etc/segmentation/contexthub"
-        cq:lastModified="{Date}2022-11-10T19:24:19.897+01:00"
+        cq:lastModified="{Date}2022-11-10T19:34:28.899+01:00"
         cq:lastModifiedBy="admin"
         cq:template="/conf/aemgeeks/settings/wcm/templates/page-content"
         jcr:primaryType="cq:PageContent"
@@ -91,7 +91,7 @@
                     <author_books
                         jcr:created="{Date}2022-11-10T17:36:49.483+01:00"
                         jcr:createdBy="admin"
-                        jcr:lastModified="{Date}2022-11-10T19:24:19.891+01:00"
+                        jcr:lastModified="{Date}2022-11-10T19:34:28.890+01:00"
                         jcr:lastModifiedBy="admin"
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="aemgeeks/components/content/author-books"
@@ -122,6 +122,38 @@
                                 copies="400"
                                 publishdate="{Date}2022-11-07T00:00:00.000+01:00"/>
                         </bookdetailswithbean>
+                        <bookdetailswithnastedmultifield jcr:primaryType="nt:unstructured">
+                            <item0
+                                jcr:primaryType="nt:unstructured"
+                                bookname="Book 1"
+                                booksubject="Subject 1">
+                                <bookeditons jcr:primaryType="nt:unstructured">
+                                    <item0
+                                        jcr:primaryType="nt:unstructured"
+                                        bookediton="1"
+                                        editondate="{Date}2021-11-01T00:00:00.000+01:00"/>
+                                    <item1
+                                        jcr:primaryType="nt:unstructured"
+                                        bookediton="2"
+                                        editondate="{Date}2022-11-01T00:00:00.000+01:00"/>
+                                </bookeditons>
+                            </item0>
+                            <item1
+                                jcr:primaryType="nt:unstructured"
+                                bookname="Book 2"
+                                booksubject="Subject 1">
+                                <bookeditons jcr:primaryType="nt:unstructured">
+                                    <item0
+                                        jcr:primaryType="nt:unstructured"
+                                        bookediton="3"
+                                        editondate="{Date}2022-11-01T00:00:00.000+01:00"/>
+                                    <item1
+                                        jcr:primaryType="nt:unstructured"
+                                        bookediton="4"
+                                        editondate="{Date}2022-11-10T00:00:00.000+01:00"/>
+                                </bookeditons>
+                            </item1>
+                        </bookdetailswithnastedmultifield>
                     </author_books>
                 </container>
             </container>

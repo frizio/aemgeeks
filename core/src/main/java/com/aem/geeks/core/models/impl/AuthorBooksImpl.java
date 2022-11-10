@@ -91,16 +91,16 @@ public class AuthorBooksImpl implements AuthorBooks {
 
     @Override
     public List<MultifieldHelper> getBookDetailsWithNastedMultifield() {
-        List<MultifieldHelper> bookDetailsNasted=new ArrayList<>();
+        List<MultifieldHelper> bookDetailsNasted = new ArrayList<>();
         try {
-            Resource bookDetailNasted=componentResource.getChild("bookdetailswithnastedmultifield");
-            if(bookDetailNasted!=null){
+            Resource bookDetailNasted = componentResource.getChild("bookdetailswithnastedmultifield");
+            if (bookDetailNasted!=null) {
                 for (Resource bookNasted : bookDetailNasted.getChildren()) {
                     MultifieldHelper multifieldHelper=new MultifieldHelper(bookNasted);
-                    if(bookNasted.hasChildren()){
-                        List<NastedHalper> bookNastedList=new ArrayList<>();
-                        Resource nastedResource=bookNasted.getChild("bookeditons");
-                        for(Resource nasted : nastedResource.getChildren()){
+                    if (bookNasted.hasChildren()) {
+                        List<NastedHalper> bookNastedList = new ArrayList<>();
+                        Resource nastedResource = bookNasted.getChild("bookeditons");
+                        for (Resource nasted : nastedResource.getChildren()) {
                             bookNastedList.add(new NastedHalper(nasted));
                         }
                         multifieldHelper.setBookEditons(bookNastedList);
@@ -108,7 +108,7 @@ public class AuthorBooksImpl implements AuthorBooks {
                     bookDetailsNasted.add(multifieldHelper);
                 }
             }
-        }catch (Exception e){
+        } catch (Exception e) {
             LOG.info("\n ERROR while getting Book Details With Nasted Multifield {} ",e.getMessage());
         }
         LOG.info("\n SIZE Multifield {} ",bookDetailsNasted.size());
