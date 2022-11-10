@@ -53,8 +53,8 @@ public class AuthorBooksImpl implements AuthorBooks {
     public List<Map<String, String>> getBookDetailsWithMap() {
         List<Map<String, String>> bookDetailsMap=new ArrayList<>();
         try {
-            Resource bookDetail=componentResource.getChild("bookdetailswithmap");
-            if(bookDetail!=null){
+            Resource bookDetail = componentResource.getChild("bookdetailswithmap");
+            if (bookDetail != null) {
                 for (Resource book : bookDetail.getChildren()) {
                     Map<String,String> bookMap=new HashMap<>();
                     bookMap.put("bookname",book.getValueMap().get("bookname",String.class));
@@ -63,7 +63,7 @@ public class AuthorBooksImpl implements AuthorBooks {
                     bookDetailsMap.add(bookMap);
                 }
             }
-        }catch (Exception e){
+        } catch (Exception e) {
             LOG.info("\n ERROR while getting Book Details {} ",e.getMessage());
         }
         LOG.info("\n SIZE {} ",bookDetailsMap.size());

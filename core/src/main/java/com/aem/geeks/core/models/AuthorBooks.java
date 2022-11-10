@@ -14,6 +14,7 @@ public interface AuthorBooks {
 
     List<Map<String,String>> getBookDetailsWithMap();
 
+
     List<MultifieldHelper> getBookDetailsWithBean();
 
     List<MultifieldHelper> getBookDetailsWithNastedMultifield();
