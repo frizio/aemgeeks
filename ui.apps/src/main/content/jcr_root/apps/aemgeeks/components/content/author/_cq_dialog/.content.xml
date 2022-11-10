@@ -45,7 +45,7 @@
                                 sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
                                 composite="{Boolean}false"
                                 fieldLabel="Autor's Books"
-                                validation="geeks-multifield">
+                                validation="the-geeks-multifield">
                                 <field
                                     granite:class="cmp-teaser__editor-action"
                                     jcr:primaryType="nt:unstructured"
@@ -53,8 +53,8 @@
                                     name="./books"/>
                                 <granite:data
                                     jcr:primaryType="nt:unstructured"
-                                    max-items="{Long}5"
-                                    min-items="{Long}3"/>
+                                    max-items="{Long}6"
+                                    min-items="{Long}2"/>
                             </books>
                         </items>
                     </well>
