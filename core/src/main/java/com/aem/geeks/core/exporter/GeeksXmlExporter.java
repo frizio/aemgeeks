@@ -14,11 +14,14 @@ import java.util.Map;
 
 @Component(service = ModelExporter.class)
 public class GeeksXmlExporter implements ModelExporter {
+
     private static final Logger LOG = LoggerFactory.getLogger(GeeksXmlExporter.class);
+
     @Override
     public boolean isSupported(Class<?> aClass) {
         return true;
     }
+
 
     @Override
     public <T> T export(Object model, Class<T> aClass, Map<String, String> options) throws ExportException {
@@ -36,6 +39,7 @@ public class GeeksXmlExporter implements ModelExporter {
 
     @Override
     public String getName() {
-        return "geeksxml";
+        return "geeks-xml";
     }
+
 }
