@@ -12,6 +12,10 @@ import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.*;
 import javax.xml.namespace.QName;
 import java.util.*;
+
+/*
+ *  http://localhost:4502/content/aemgeeks/us/en/xml-exporter/jcr:content/parsys-8/xmlexporter.geeks.xml
+ */
 @Exporter(
         name = "geeks-xml",
         extensions = "xml",
