@@ -58,6 +58,17 @@
                         xmldate="{Date}2022-11-11T00:00:00.000+01:00"
                         xmldescription="The description"
                         xmltitle="The Xml Exporter Title "/>
+                    <multiexporter
+                        jcr:created="{Date}2022-11-11T22:20:18.859+01:00"
+                        jcr:createdBy="admin"
+                        jcr:lastModified="{Date}2022-11-11T22:21:04.853+01:00"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="aemgeeks/components/content/multiexporter"
+                        books="[AEM Book 1,AEM Book 2]"
+                        date="{Date}2022-11-10T00:00:00.000+01:00"
+                        description="Lorem ipsum 10"
+                        title="The multiexporters title"/>
                 </container>
             </container>
         </root>

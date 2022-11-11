@@ -18,12 +18,26 @@ import javax.xml.bind.annotation.XmlElementWrapper;
 import javax.xml.bind.annotation.XmlRootElement;
 import java.util.*;
 
+/*
+ * http://localhost:4502/content/aemgeeks/us/demo-exporters/jcr:content/root/container/container/multiexporter.geeks-json.json
+ *
+ * http://localhost:4502/content/aemgeeks/us/demo-exporters/jcr:content/root/container/container/multiexporter.geeks-xml.xml
+ */
+
 @Exporters({
-        @Exporter(name = "jackson",extensions = "json",selector = "geeksjson",
+    @Exporter(
+        name = "jackson",
+        extensions = "json",
+        selector = "geeks-json",
         options = {
-                @ExporterOption(name = "SerializationFeature.WRAP_ROOT_VALUE", value="true")
-        }),
-        @Exporter(name = "geeksxml",extensions = "xml",selector = "geeksxml")
+            @ExporterOption(name = "SerializationFeature.WRAP_ROOT_VALUE", value="true")
+        }
+    ),
+    @Exporter(
+        name = "geeks-xml",
+        extensions = "xml",
+        selector = "geeks-xml"
+    )
 })
 @Model(
         adaptables = SlingHttpServletRequest.class,
