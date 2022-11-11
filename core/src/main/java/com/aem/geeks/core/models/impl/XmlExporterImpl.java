@@ -12,7 +12,11 @@ import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.*;
 import javax.xml.namespace.QName;
 import java.util.*;
-@Exporter(name = "geeksxml",extensions = "xml",selector = "geeks")
+@Exporter(
+        name = "geeks-xml",
+        extensions = "xml",
+        selector = "geeks"
+)
 @Model(
         adaptables = SlingHttpServletRequest.class,
         adapters = XmlExporter.class,
@@ -22,6 +26,7 @@ import java.util.*;
 @XmlRootElement(name = "geeks-exporter")
 public class XmlExporterImpl implements XmlExporter {
     static final String RESOURCE_TYPE="aemgeeks/components/content/xmlexporter";
+
     private static final Logger LOG = LoggerFactory.getLogger(XmlExporterImpl.class);
 
     @Inject
@@ -69,6 +74,7 @@ public class XmlExporterImpl implements XmlExporter {
     public Calendar getDate() {
         return xmldate;
     }
+
     @XmlElement(name = "author-name")
     public String getAuthorName(){
         return "AEM GEEKS";
