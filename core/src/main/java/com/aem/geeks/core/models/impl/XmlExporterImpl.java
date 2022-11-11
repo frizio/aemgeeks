@@ -14,7 +14,7 @@ import javax.xml.namespace.QName;
 import java.util.*;
 
 /*
- *  http://localhost:4502/content/aemgeeks/us/en/xml-exporter/jcr:content/parsys-8/xmlexporter.geeks.xml
+ *  http://localhost:4502/content/aemgeeks/us/demo-exporters/jcr:content/root/container/container/xmlexporter.geeks.xml
  */
 @Exporter(
         name = "geeks-xml",

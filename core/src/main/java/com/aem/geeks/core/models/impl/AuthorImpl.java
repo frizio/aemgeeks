@@ -18,7 +18,7 @@ import javax.inject.Named;
 import java.util.*;
 
 /*
- * http://localhost:4502/content/aemgeeks/us/en/author/jcr:content/parsys-8/author.geeks.json
+ * http://localhost:4502/content/aemgeeks/us/demo-exporters/jcr:content/root/container/container/author.geeks.json
  */
 @Model(
         adaptables = SlingHttpServletRequest.class,
