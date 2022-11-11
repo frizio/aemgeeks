@@ -25,13 +25,14 @@ import java.util.*;
         defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL
 )
 @Exporter(
-        name = "jackson",       // "exporter"
-        extensions ="json",     // "type"
-        selector = "geeks",     // "selector"
+        name = "jackson",       // "exporter"   *
+        extensions ="json",     // "type"       *
+        selector = "geeks",     // "selector": infinity | model
         options = {
                 @ExporterOption(name = "SerializationFeature.WRAP_ROOT_VALUE", value="true"),
                 @ExporterOption(name = "MapperFeature.SORT_PROPERTIES_ALPHABETICALLY", value = "true")
-        })
+        }
+)
 @JsonRootName("author-details")
 public class AuthorImpl implements Author {
 
@@ -80,10 +81,22 @@ public class AuthorImpl implements Author {
     @ValueMapValue
     private List<String> books;
 
+    @ValueMapValue
+    private List<String> occupations;
+
     @Override
     public List<String> getBooks() {
         if (books != null) {
             return new ArrayList<String>(books);
+        } else {
+            return Collections.emptyList();
+        }
+    }
+
+    @Override
+    public List<String> getOccupations() {
+        if (occupations != null) {
+            return new ArrayList<String>(occupations);
         } else {
             return Collections.emptyList();
         }
@@ -125,12 +138,13 @@ public class AuthorImpl implements Author {
         return modifiedBy;
     }
 
-    @JsonProperty(value = "auhtor-name")
+    @JsonProperty(value = "author-name")
     public String authorName(){
         return "AEM GEEKS";
     }
 
     @Override
+    @JsonProperty(value = "books-details")
     public List<Map<String, String>> getBookDetailsWithMap() {
         List<Map<String, String>> bookDetailsMap = new ArrayList<>();
         try {

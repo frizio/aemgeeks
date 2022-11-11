@@ -12,6 +12,7 @@ public interface Author {
     String getHomePageName();
     String getLastModifiedBy();
     List<String> getBooks();
+    List<String> getOccupations();
     List<Map<String, String>> getBookDetailsWithMap();
 
 }
