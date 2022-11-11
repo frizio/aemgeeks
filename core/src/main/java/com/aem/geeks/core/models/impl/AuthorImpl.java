@@ -25,16 +25,18 @@ import java.util.*;
         defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL
 )
 @Exporter(
-        name = "jackson",
-        extensions ="json",
-        selector = "geeks",
+        name = "jackson",       // "exporter"
+        extensions ="json",     // "type"
+        selector = "geeks",     // "selector"
         options = {
                 @ExporterOption(name = "SerializationFeature.WRAP_ROOT_VALUE", value="true"),
                 @ExporterOption(name = "MapperFeature.SORT_PROPERTIES_ALPHABETICALLY", value = "true")
         })
 @JsonRootName("author-details")
 public class AuthorImpl implements Author {
+
     private static final Logger LOG = LoggerFactory.getLogger(AuthorImpl.class);
+
     final protected static String RESOURCE_TYPE="aemgeeks/components/content/author";
 
     @Inject
