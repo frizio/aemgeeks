@@ -17,11 +17,26 @@ import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 import java.util.Iterator;
 import java.util.List;
-@Model(adaptables = SlingHttpServletRequest.class,
-adapters = ServiceDemo.class,
-defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
+
+@Model(
+    adaptables = SlingHttpServletRequest.class,
+    adapters = ServiceDemo.class,
+    defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL
+)
 public class ServiceDemoImpl  implements ServiceDemo {
+
     private static final Logger LOG= LoggerFactory.getLogger(ServiceDemoImpl.class);
+
+    /*--------Start Tutorial #27--------*/
+    @PostConstruct
+    protected void init() {
+        LOG.info("\n********* PRINTING LOGS *********");
+        LOG.trace(" ********* PRINTING trace *********");
+        LOG.debug(" ********* PRINTING debug *********");
+        LOG.info(" ********* PRINTING info *********");
+        LOG.warn(" ********* PRINTING warn *********");
+        LOG.error(" ********* PRINTING error *********");
+    }
 
     /*--------Start Tutorial #29--------*/
     @OSGiService
@@ -30,7 +45,6 @@ public class ServiceDemoImpl  implements ServiceDemo {
     /*@Inject*/
     @OSGiService
     DemoServiceB demoServiceB;
-
 
     @Override
     public Iterator<Page> getPagesList(){
