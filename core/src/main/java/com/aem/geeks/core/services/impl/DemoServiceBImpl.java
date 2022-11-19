@@ -18,8 +18,12 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-@Component(service = DemoServiceB.class,immediate = true)
+@Component(
+        service = DemoServiceB.class,
+        immediate = true
+)
 public class DemoServiceBImpl implements DemoServiceB {
+
     private static final Logger LOG= LoggerFactory.getLogger(DemoServiceBImpl.class);
 
 
@@ -32,6 +36,7 @@ public class DemoServiceBImpl implements DemoServiceB {
         return "Response coming from  "+multiService.getName();
     }
     /*--------End Tutorial #30--------*/
+
     /*--------Start Tutorial #29--------*/
     @Reference
     DemoService demoService;
@@ -39,9 +44,8 @@ public class DemoServiceBImpl implements DemoServiceB {
     @Override
     public List<String> getPages(){
         List<String> listPages = new ArrayList<String>();
-
         try {
-            Iterator<Page> pages=demoService.getPages();
+            Iterator<Page> pages = demoService.getPages();
             while (pages.hasNext()) {
                 listPages.add(pages.next().getTitle());
             }
@@ -52,4 +56,5 @@ public class DemoServiceBImpl implements DemoServiceB {
         return null;
     }
     /*--------End Tutorial #29--------*/
+
 }

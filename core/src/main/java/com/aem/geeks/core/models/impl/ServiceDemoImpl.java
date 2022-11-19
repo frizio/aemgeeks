@@ -13,6 +13,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import javax.annotation.PostConstruct;
+import javax.inject.Inject;
 import java.util.Iterator;
 import java.util.List;
 
@@ -43,8 +44,8 @@ public class ServiceDemoImpl  implements ServiceDemo {
     @OSGiService
     private DemoService demoService;
 
-    /*@Inject*/
-    @OSGiService
+    @Inject
+    /*@OSGiService*/
     DemoServiceB demoServiceB;
 
     @Override
