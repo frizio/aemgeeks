@@ -6,4 +6,5 @@ import java.util.Iterator;
 
 public interface DemoService {
     public Iterator<Page> getPages();
+
 }

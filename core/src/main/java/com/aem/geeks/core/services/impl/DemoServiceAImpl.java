@@ -18,8 +18,12 @@ import javax.jcr.Session;
 import java.util.Iterator;
 import java.util.List;
 
-@Component(service = DemoService.class,immediate = true)
+@Component(
+        service = DemoService.class,
+        immediate = true
+)
 public class DemoServiceAImpl implements DemoService {
+
     private static final Logger LOG= LoggerFactory.getLogger(DemoServiceAImpl.class);
 
     @Reference
@@ -29,28 +33,29 @@ public class DemoServiceAImpl implements DemoService {
     private SlingRepository slingRepository;
 
     @Activate
-    public void activate(ComponentContext componentContext){
+    public void activate(ComponentContext componentContext) {
         LOG.info("\n ==============INSIDE ACTIVATE================");
-        LOG.info("\n {} = {} ",componentContext.getBundleContext().getBundle().getBundleId(),componentContext.getBundleContext().getBundle().getSymbolicName());
+        LOG.info("Frizio dev");
+        LOG.info("\n {} = {} ", componentContext.getBundleContext().getBundle().getBundleId(), componentContext.getBundleContext().getBundle().getSymbolicName());
     }
 
     @Deactivate
-    public void deactivate(ComponentContext componentContext){
+    public void deactivate(ComponentContext componentContext) {
         LOG.info("\n ==============INSIDE DEACTIVATE================");
     }
 
     @Modified
-    public void modified(ComponentContext componentContext){
+    public void modified(ComponentContext componentContext) {
         LOG.info("\n ==============INSIDE MODIFIED================");
     }
 
     @Override
     public Iterator<Page>  getPages(){
         try {
-            ResourceResolver resourceResolver= ResolverUtil.newResolver(resourceResolverFactory);
-            PageManager pageManager=resourceResolver.adaptTo(PageManager.class);
-            Page page=pageManager.getPage("/content/aemgeeks/us/en");
-            Iterator<Page> pages=page.listChildren();
+            ResourceResolver resourceResolver = ResolverUtil.newResolver(resourceResolverFactory);
+            PageManager pageManager = resourceResolver.adaptTo(PageManager.class);
+            Page page = pageManager.getPage("/content/aemgeeks/us/en");
+            Iterator<Page> pages = page.listChildren();
             return pages;
         } catch (LoginException e) {
             LOG.info("\n Login Exception {} ",e.getMessage());
