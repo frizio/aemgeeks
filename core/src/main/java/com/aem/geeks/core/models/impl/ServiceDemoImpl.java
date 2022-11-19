@@ -45,7 +45,7 @@ public class ServiceDemoImpl  implements ServiceDemo {
     private DemoService demoService;
 
     @Inject
-    /*@OSGiService*/
+    //@OSGiService
     DemoServiceB demoServiceB;
 
     @Override
@@ -62,6 +62,7 @@ public class ServiceDemoImpl  implements ServiceDemo {
 
 
     /*--------Start Tutorial #30--------*/
+
     @OSGiService(filter = "(component.name=serviceA)")
     MultiService multiService;
 
