@@ -49,6 +49,7 @@ public class OSGiConfigDemoImpl implements OSGiConfigDemo {
     }
     /*--------End Tutorial #31--------*/
 
+
     /*--------Start Tutorial #32--------*/
     @OSGiService
     OSGiConfigModule oSGiConfigModule;
@@ -57,15 +58,18 @@ public class OSGiConfigDemoImpl implements OSGiConfigDemo {
     public int getServiceId() {
         return oSGiConfigModule.getServiceId();
     }
+
     @Override
     public String getServiceNameModule() {
         return oSGiConfigModule.getServiceName();
     }
+
     @Override
     public String getServiceURL() {
         return oSGiConfigModule.getServiceURL();
     }
     /*--------End Tutorial #32--------*/
+
 
     /*--------Start Tutorial #33--------*/
     @OSGiService
