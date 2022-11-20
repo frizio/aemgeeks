@@ -14,8 +14,9 @@ import java.util.List;
 
 @Model(adaptables = SlingHttpServletRequest.class,
         adapters = OSGiConfigDemo.class,
-        defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
-public class OSGiConfigDemoImpl implements OSGiConfigDemo{
+        defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL
+)
+public class OSGiConfigDemoImpl implements OSGiConfigDemo {
 
 
     /*--------Start Tutorial #31--------*/

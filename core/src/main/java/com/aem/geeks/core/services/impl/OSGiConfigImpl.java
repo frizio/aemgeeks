@@ -7,10 +7,13 @@ import org.osgi.service.metatype.annotations.*;
 
 @Component(service = OSGiConfig.class,immediate = true)
 @Designate(ocd = OSGiConfigImpl.ServiceConfig.class )
-public class OSGiConfigImpl implements OSGiConfig{
+public class OSGiConfigImpl implements OSGiConfig {
 
-    @ObjectClassDefinition(name="AEM Geeks - OSGi Configuration",
-            description = "OSGi Configuration demo.")
+    // This is a inner interface class
+    @ObjectClassDefinition(
+        name="AEM Geeks - OSGi Configuration",
+        description = "OSGi Configuration demo."
+    )
     public @interface ServiceConfig {
 
         @AttributeDefinition(
@@ -49,6 +52,7 @@ public class OSGiConfigImpl implements OSGiConfig{
                 },
                 type = AttributeType.STRING)
         String getRunMode() default "both";
+
     }
 
     private String serviceName;
@@ -59,11 +63,11 @@ public class OSGiConfigImpl implements OSGiConfig{
 
     @Activate
     protected void activate(ServiceConfig serviceConfig){
-        serviceName=serviceConfig.serviceName();
-        serviceCount=serviceConfig.getServiceCount();
-        liveData=serviceConfig.getLiveData();
-        countries=serviceConfig.getCountries();
-        runModes=serviceConfig.getRunMode();
+        serviceName = serviceConfig.serviceName();
+        serviceCount = serviceConfig.getServiceCount();
+        liveData = serviceConfig.getLiveData();
+        countries = serviceConfig.getCountries();
+        runModes = serviceConfig.getRunMode();
     }
 
     @Override
