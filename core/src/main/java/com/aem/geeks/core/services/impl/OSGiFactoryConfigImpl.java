@@ -11,31 +11,41 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-@Component (service = OSGiFactoryConfig.class,configurationPolicy = ConfigurationPolicy.REQUIRE)
-@Designate (ocd = GeeksOSGiFactoryConfig.class, factory = true)
+@Component(
+        service = OSGiFactoryConfig.class,
+        configurationPolicy = ConfigurationPolicy.REQUIRE
+)
+@Designate(ocd = GeeksOSGiFactoryConfig.class, factory = true)
 public class OSGiFactoryConfigImpl implements OSGiFactoryConfig {
+
     private static final Logger LOGGER = LoggerFactory.getLogger(OSGiFactoryConfigImpl.class);
 
     private int configID;
+
     private String serviceName;
+
     private String serviceURL;
+
     private List<OSGiFactoryConfig> configsList;
 
     @Activate
     @Modified
     protected void activate(final GeeksOSGiFactoryConfig config) {
         configID = config.configID();
-        serviceName=config.serviceName();
-        serviceURL=config.serviceURL();
+        serviceName = config.serviceName();
+        serviceURL = config.serviceURL();
     }
 
-    @Reference(service = OSGiFactoryConfig.class, cardinality = ReferenceCardinality.MULTIPLE, policy = ReferencePolicy.DYNAMIC)
+    @Reference(
+            service = OSGiFactoryConfig.class,
+            cardinality = ReferenceCardinality.MULTIPLE,
+            policy = ReferencePolicy.DYNAMIC
+    )
     public void bindOSGiFactoryConfig(final OSGiFactoryConfig config) {
-        if (configsList == null){
+        if (configsList == null) {
             configsList = new ArrayList<>();
         }
         configsList.add(config);
-
     }
 
     public void unbindOSGiFactoryConfig(final OSGiFactoryConfig config) {
@@ -64,7 +74,7 @@ public class OSGiFactoryConfigImpl implements OSGiFactoryConfig {
     @Override
     public OSGiFactoryConfig get(int configID) {
         for (OSGiFactoryConfig confFact : configsList) {
-            if (configID==confFact.getConfigID())
+            if (configID == confFact.getConfigID())
                 return confFact;
         }
         return null;

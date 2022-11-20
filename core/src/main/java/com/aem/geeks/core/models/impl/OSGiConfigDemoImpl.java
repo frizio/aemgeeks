@@ -71,6 +71,7 @@ public class OSGiConfigDemoImpl implements OSGiConfigDemo {
     /*--------End Tutorial #32--------*/
 
 
+
     /*--------Start Tutorial #33--------*/
     @OSGiService
     OSGiFactoryConfig oSGiFactoryConfig;

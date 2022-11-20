@@ -4,9 +4,12 @@ import org.osgi.service.metatype.annotations.AttributeDefinition;
 import org.osgi.service.metatype.annotations.AttributeType;
 import org.osgi.service.metatype.annotations.ObjectClassDefinition;
 
-@ObjectClassDefinition(name="AEM Geeks - OSGi Factory Configuration",
-        description = "OSGi Factory Configuration demo.")
+@ObjectClassDefinition(
+        name = "AEM Geeks - OSGi Factory Configuration",
+        description = "OSGi Factory Configuration demo."
+)
 public @interface GeeksOSGiFactoryConfig {
+
     @AttributeDefinition(
             name = "Config ID",
             description = "Enter service id.",
@@ -25,4 +28,5 @@ public @interface GeeksOSGiFactoryConfig {
             type = AttributeType.STRING
     )
     String serviceURL() default "URL #";
+
 }
